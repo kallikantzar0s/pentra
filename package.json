@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "npx serve .",
-    "dev": "npx live-server --port=3000 --no-browser"
+    "dev": "npx live-server --port=3000 --no-browser",
+    "deploy": "npx wrangler deploy"
   },
   "keywords": ["pentra", "cybersecurity", "penetration-testing"],
   "author": "PENTRA LLC",
