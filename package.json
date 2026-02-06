@@ -1,0 +1,13 @@
+{
+  "name": "pentra",
+  "version": "1.0.0",
+  "description": "PENTRA LLC — Offensive Security & Penetration Testing Landing Page",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000 --no-browser"
+  },
+  "keywords": ["pentra", "cybersecurity", "penetration-testing"],
+  "author": "PENTRA LLC",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PENTRA — Offensive Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Grain overlay -->
+  <div class="grain"></div>
+
+  <!-- Mouse glow -->
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-logo" data-scramble>PENTRA</a>
+    <div class="nav-right">
+      <a href="#services" class="nav-link" data-scramble>Services</a>
+      <a href="#about" class="nav-link" data-scramble>About</a>
+      <a href="#contact" class="nav-link" data-scramble>Contact</a>
+      <a href="#contact" class="nav-btn">ENGAGE</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-scramble>Home</a>
+    <a href="#services" data-scramble>Services</a>
+    <a href="#about" data-scramble>About</a>
+    <a href="#contact" data-scramble>Contact</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text" aria-hidden="true">BREACH</div>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-tag">
+          <span class="tag-line"></span>
+          OFFENSIVE SECURITY
+        </div>
+        <h1 class="hero-title reveal-text">
+          <span class="line"><span class="line-inner">We don't</span></span>
+          <span class="line"><span class="line-inner">defend walls<span class="text-accent">.</span></span></span>
+          <span class="line"><span class="line-inner">We <em class="text-accent italic-glow">break</em> them<span class="text-accent">.</span></span></span>
+        </h1>
+        <p class="hero-desc reveal-fade">
+          PENTRA is an elite offensive security firm. We simulate real attacks to find your vulnerabilities — before someone else does.
+        </p>
+        <div class="hero-actions reveal-fade">
+          <a href="#contact" class="btn-glitch" data-text="REQUEST ASSESSMENT">REQUEST ASSESSMENT</a>
+          <a href="#services" class="btn-ghost">
+            <span class="btn-ghost-line"></span>
+            EXPLORE SERVICES
+          </a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hud-panel">
+          <div class="hud-header">
+            <span class="hud-dot"></span>
+            <span>LIVE THREAT FEED</span>
+            <span class="hud-blink">REC</span>
+          </div>
+          <div class="hud-content" id="hudContent">
+            <div class="hud-line"><span class="hud-time">00:00:01</span><span class="hud-event hud-crit">CRITICAL</span><span>SQL injection — /api/v2/users</span></div>
+            <div class="hud-line"><span class="hud-time">00:00:03</span><span class="hud-event hud-high">HIGH</span><span>Exposed S3 bucket — backup-prod-2024</span></div>
+            <div class="hud-line"><span class="hud-time">00:00:07</span><span class="hud-event hud-crit">CRITICAL</span><span>Domain Admin via Kerberoast</span></div>
+            <div class="hud-line"><span class="hud-time">00:00:12</span><span class="hud-event hud-med">MEDIUM</span><span>Missing HSTS header — portal.target.com</span></div>
+            <div class="hud-line"><span class="hud-time">00:00:18</span><span class="hud-event hud-high">HIGH</span><span>RCE via deserialization — /upload</span></div>
+            <div class="hud-line"><span class="hud-time">00:00:24</span><span class="hud-event hud-crit">CRITICAL</span><span>Password spray success — 47 accounts</span></div>
+          </div>
+          <div class="hud-footer">
+            <span>PENTRA SCANNER v4.2.1</span>
+            <span class="hud-counter" id="hudCounter">0</span>
+          </div>
+        </div>
+        <div class="hud-stats">
+          <div class="hud-stat">
+            <span class="hud-stat-num" data-target="500">0</span>
+            <span class="hud-stat-label">ENGAGEMENTS</span>
+          </div>
+          <div class="hud-stat">
+            <span class="hud-stat-num" data-target="12847">0</span>
+            <span class="hud-stat-label">VULNS FOUND</span>
+          </div>
+          <div class="hud-stat">
+            <span class="hud-stat-num" data-target="99">0</span>
+            <span class="hud-stat-label">% RETENTION</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE DIVIDER ===== -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>EXTERNAL PENTEST</span><span class="marquee-dot">◆</span>
+      <span>INTERNAL PENTEST</span><span class="marquee-dot">◆</span>
+      <span>WEB APP SECURITY</span><span class="marquee-dot">◆</span>
+      <span>PHISHING CAMPAIGNS</span><span class="marquee-dot">◆</span>
+      <span>AD HARDENING</span><span class="marquee-dot">◆</span>
+      <span>RED TEAM OPS</span><span class="marquee-dot">◆</span>
+      <span>EXTERNAL PENTEST</span><span class="marquee-dot">◆</span>
+      <span>INTERNAL PENTEST</span><span class="marquee-dot">◆</span>
+      <span>WEB APP SECURITY</span><span class="marquee-dot">◆</span>
+      <span>PHISHING CAMPAIGNS</span><span class="marquee-dot">◆</span>
+      <span>AD HARDENING</span><span class="marquee-dot">◆</span>
+      <span>RED TEAM OPS</span><span class="marquee-dot">◆</span>
+    </div>
+  </div>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="section-label">
+      <span class="label-num">01</span>
+      <span class="label-line"></span>
+      <span>SERVICES</span>
+    </div>
+
+    <div class="services-header">
+      <h2 class="big-heading reveal-text">
+        <span class="line"><span class="line-inner">Attack</span></span>
+        <span class="line"><span class="line-inner">Surface<span class="text-accent">.</span></span></span>
+      </h2>
+      <p class="services-intro reveal-fade">We cover every angle — from your perimeter to your people. Each engagement is custom-scoped, manually executed, and documented for both technical teams and executives.</p>
+    </div>
+
+    <div class="accordion" id="servicesAccordion">
+      <!-- Service 1 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="acc-num">01</span>
+          <span class="acc-title" data-scramble>External Penetration Testing</span>
+          <span class="acc-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-panel">
+          <div class="acc-grid">
+            <div class="acc-desc">
+              <p>We replicate the tactics of real threat actors targeting your organization from the outside. Every internet-facing asset is fair game — web servers, mail gateways, VPNs, DNS, cloud endpoints, APIs, and forgotten subdomains buried in your DNS history.</p>
+              <p>This isn't a vulnerability scan. Our operators manually chain low-severity findings into high-impact attack paths that automated tools will never flag.</p>
+            </div>
+            <div class="acc-details">
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>OSINT & Reconnaissance</strong>
+                  <p>Full external footprint mapping — leaked credentials, exposed services, acquisition assets, and shadow IT discovery through passive and active recon.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Exploitation & Impact</strong>
+                  <p>We exploit what we find to prove real business impact — data exfiltration, service disruption, pivot to internal networks — not theoretical risk ratings.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Actionable Reporting</strong>
+                  <p>Every finding comes with proof-of-concept, CVSS scoring, reproduction steps, and remediation guidance your team can act on the same day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="acc-num">02</span>
+          <span class="acc-title" data-scramble>Internal Penetration Testing</span>
+          <span class="acc-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-panel">
+          <div class="acc-grid">
+            <div class="acc-desc">
+              <p>We simulate what happens after an attacker gets inside — through phishing, a rogue employee, a compromised VPN, or physical access. Starting from a standard workstation or network jack, we map the blast radius.</p>
+              <p>The goal: demonstrate how far a motivated attacker can go from a single foothold, and what sensitive data they can reach along the way.</p>
+            </div>
+            <div class="acc-details">
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Privilege Escalation</strong>
+                  <p>From standard user to domain admin — we exploit misconfigurations, credential harvesting, Kerberos weaknesses, and local privilege escalation vectors.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Lateral Movement</strong>
+                  <p>Pass-the-hash, token impersonation, NTLM relay, Kerberoasting — we move through your network the same way APTs do.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Segmentation Validation</strong>
+                  <p>We test whether your network boundaries actually hold. Can we jump from corporate to production? From guest Wi-Fi to domain controllers?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="acc-num">03</span>
+          <span class="acc-title" data-scramble>Web Application Pentesting</span>
+          <span class="acc-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-panel">
+          <div class="acc-grid">
+            <div class="acc-desc">
+              <p>Your web apps are your most exposed attack surface. We go far beyond OWASP Top 10 checklists — our testers manually probe every input, endpoint, workflow, and business logic path. We test like attackers think.</p>
+              <p>Covers REST APIs, GraphQL, WebSocket endpoints, SPAs, server-side rendering, microservices, and legacy monoliths alike.</p>
+            </div>
+            <div class="acc-details">
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Injection & Execution</strong>
+                  <p>SQLi, XSS, SSTI, command injection, SSRF, XXE, insecure deserialization — tested manually with custom payloads, not just scanner output.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Auth & Access Control</strong>
+                  <p>We break authentication flows, test MFA bypasses, exploit IDOR/BOLA vulnerabilities, and validate role-based access control at every endpoint.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Business Logic Flaws</strong>
+                  <p>The vulnerabilities scanners can't find — price manipulation, workflow bypass, race conditions, and state management issues that lead to real compromise.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="acc-num">04</span>
+          <span class="acc-title" data-scramble>Phishing & Social Engineering</span>
+          <span class="acc-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-panel">
+          <div class="acc-grid">
+            <div class="acc-desc">
+              <p>Your firewall doesn't matter if someone clicks the link. We run intelligence-driven phishing campaigns that mirror the exact threats your employees face — from mass credential harvesting to targeted spear-phishing of executives.</p>
+              <p>We also test physical security, vishing (voice phishing), and pretexting scenarios when authorized.</p>
+            </div>
+            <div class="acc-details">
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Custom Campaigns</strong>
+                  <p>OSINT-driven pretexts mimicking your vendors, partners, and internal tools. We clone login pages, craft believable lures, and track every interaction.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Payload Testing</strong>
+                  <p>Macro-enabled docs, HTA, ISO/LNK, HTML smuggling — we test whether malicious payloads bypass your email gateway and endpoint protection.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Metrics & Reporting</strong>
+                  <p>Click rates, credential submissions, reporting rates, time-to-click — broken down by department, role, and campaign variant with trend analysis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="acc-num">05</span>
+          <span class="acc-title" data-scramble>Active Directory Hardening</span>
+          <span class="acc-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-panel">
+          <div class="acc-grid">
+            <div class="acc-desc">
+              <p>Active Directory is the skeleton key to your entire environment — and it's almost always misconfigured. We map every attack path from compromised user to Domain Admin using BloodHound, PingCastle, and custom tooling, then systematically close them.</p>
+              <p>This isn't a checklist audit. We attack your AD the same way ransomware operators do, then harden it against those exact techniques.</p>
+            </div>
+            <div class="acc-details">
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Attack Path Mapping</strong>
+                  <p>BloodHound analysis, ACL abuse chains, Kerberos delegation issues, GPO weaponization paths — every route to DA, visualized and prioritized.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Kerberos Hardening</strong>
+                  <p>Kerberoasting, AS-REP roasting, Golden/Silver tickets, unconstrained delegation — we test and remediate every Kerberos attack vector.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Tiered Admin Model</strong>
+                  <p>We implement Microsoft's tier model, PAW deployment, LAPS, Credential Guard, LDAP signing, and channel binding — a prioritized hardening roadmap.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="acc-num">06</span>
+          <span class="acc-title" data-scramble>Red Team Operations</span>
+          <span class="acc-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="accordion-panel">
+          <div class="acc-grid">
+            <div class="acc-desc">
+              <p>The ultimate test. Red Team Operations simulate a full adversary campaign — no scope limits, no announced timeline. We use the same TTPs as nation-state actors and ransomware gangs to test your people, processes, and technology under realistic conditions.</p>
+              <p>The goal isn't a list of vulnerabilities. It's answering: "Can our security program detect, respond to, and stop a real attack?"</p>
+            </div>
+            <div class="acc-details">
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Objective-Based</strong>
+                  <p>We pursue specific crown jewels — CEO email, customer database, production systems — using any available attack vector including physical and social.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Custom C2 & Evasion</strong>
+                  <p>Custom implants, malleable C2 profiles, AMSI/ETW bypasses, living-off-the-land techniques — purpose-built to evade your specific security stack.</p>
+                </div>
+              </div>
+              <div class="acc-detail-item">
+                <span class="detail-marker">//</span>
+                <div>
+                  <strong>Purple Team Debrief</strong>
+                  <p>Collaborative attack replay with your blue team — every step mapped to MITRE ATT&CK, with detection gaps identified and new rules co-developed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="section-label">
+      <span class="label-num">02</span>
+      <span class="label-line"></span>
+      <span>ABOUT</span>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-left">
+        <h2 class="big-heading reveal-text">
+          <span class="line"><span class="line-inner">Built to</span></span>
+          <span class="line"><span class="line-inner">break<span class="text-accent">.</span></span></span>
+        </h2>
+      </div>
+      <div class="about-right reveal-fade">
+        <p class="about-lead">PENTRA LLC is a specialized offensive security firm founded by operators with backgrounds in enterprise security, government contracting, and Fortune 500 red teaming.</p>
+        <p>We don't run scanners and hand you a PDF. Every engagement is operator-driven, manually executed, and treated as a unique mission. Our reports speak to both your SOC analysts and your board of directors.</p>
+        <p>We hold OSCP, OSCE3, OSEP, CRTO, GPEN, GXPN, and CPTS certifications. Our methodology aligns with PTES, OWASP, MITRE ATT&CK, and NIST frameworks.</p>
+      </div>
+    </div>
+
+    <div class="about-values-row">
+      <div class="value-block reveal-fade">
+        <span class="value-num">01</span>
+        <h3>Integrity</h3>
+        <p>Strict rules of engagement. Your data handled with absolute confidentiality. We operate as if our own reputation is on the line — because it is.</p>
+      </div>
+      <div class="value-block reveal-fade">
+        <span class="value-num">02</span>
+        <h3>Transparency</h3>
+        <p>No black boxes. You see our methodology, our tools, and our reasoning. Real-time communication throughout every engagement.</p>
+      </div>
+      <div class="value-block reveal-fade">
+        <span class="value-num">03</span>
+        <h3>Excellence</h3>
+        <p>Continuous offensive research. Custom tooling. We push the boundaries of what's possible so your defenses are tested against tomorrow's threats.</p>
+      </div>
+    </div>
+
+    <div class="about-certs">
+      <div class="cert-row">
+        <span class="cert" data-scramble>OSCP</span>
+        <span class="cert" data-scramble>OSCE3</span>
+        <span class="cert" data-scramble>OSEP</span>
+        <span class="cert" data-scramble>CRTO</span>
+        <span class="cert" data-scramble>GPEN</span>
+        <span class="cert" data-scramble>GXPN</span>
+        <span class="cert" data-scramble>CPTS</span>
+        <span class="cert-divider">|</span>
+        <span class="cert method" data-scramble>OWASP</span>
+        <span class="cert method" data-scramble>MITRE ATT&CK</span>
+        <span class="cert method" data-scramble>PTES</span>
+        <span class="cert method" data-scramble>NIST</span>
+      </div>
+    </div>
+
+    <div class="company-strip">
+      <div class="strip-item">
+        <span class="strip-label">ENTITY</span>
+        <span class="strip-value">PENTRA LLC</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-label">FOUNDED</span>
+        <span class="strip-value">2021</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-label">HQ</span>
+        <span class="strip-value">Arlington, VA</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-label">TEAM</span>
+        <span class="strip-value">15–25 operators</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-label">SECTORS</span>
+        <span class="strip-value">Finance · Healthcare · Gov · Tech</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="section-label">
+      <span class="label-num">03</span>
+      <span class="label-line"></span>
+      <span>CONTACT</span>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-left">
+        <h2 class="big-heading reveal-text">
+          <span class="line"><span class="line-inner">Start a</span></span>
+          <span class="line"><span class="line-inner">conversation<span class="text-accent">.</span></span></span>
+        </h2>
+        <div class="contact-details reveal-fade">
+          <div class="contact-detail">
+            <span class="detail-label">LOCATION</span>
+            <span>1401 Wilson Blvd, Suite 200<br/>Arlington, VA 22209</span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">PHONE</span>
+            <span>+1 (703) 555-0142</span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">EMAIL</span>
+            <span>contact@pentra.io</span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">SECURE</span>
+            <span>PGP key on request · Signal: @pentra_sec</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right reveal-fade">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Name</label>
+              <input type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" placeholder="you@company.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Company</label>
+              <input type="text" placeholder="Organization" />
+            </div>
+            <div class="form-field">
+              <label>Service</label>
+              <select>
+                <option value="">Select service</option>
+                <option>External Pentest</option>
+                <option>Internal Pentest</option>
+                <option>Web App Pentest</option>
+                <option>Phishing Campaign</option>
+                <option>AD Hardening</option>
+                <option>Red Team Ops</option>
+                <option>Other / Multiple</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Brief</label>
+            <textarea rows="4" placeholder="Tell us about your environment, scope, timeline..."></textarea>
+          </div>
+          <button type="submit" class="btn-glitch btn-submit" data-text="SEND MESSAGE">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="nav-logo">PENTRA</span>
+        <p>Offensive security services conducted under strict legal agreements and rules of engagement.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PENTRA LLC. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
